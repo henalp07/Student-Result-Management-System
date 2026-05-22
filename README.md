@@ -53,6 +53,7 @@ README.md
 ▶️ How to Run the Project:
 Step 1: Compile the Program
 gcc ResultManagement.c -o ResultManagement
+
 Step 2: Run the Program
 On Windows
 .\ResultManagement
