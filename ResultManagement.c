@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+//
 // Constant for total number of students
 #define SIZE 100
 
