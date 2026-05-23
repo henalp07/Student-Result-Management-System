@@ -27,9 +27,7 @@ The main objectives of this project are:
 
 - To understand real-world implementation of **C programming**
 - To learn how to manage records using **structures**
-- To perform calculations using functions
-- To create a **menu-driven console application**
-- To improve logical and problem-solving skills
+- To perform calculations using functions.
 
 ---
 
@@ -82,18 +80,11 @@ The system can display students according to grades:
 
 ---
 
-## ✅ Menu-Driven Interface
-
-The application provides an easy-to-use menu system for navigation and operations.
-
----
-
 # 🛠️ Technologies Used
 
 | Technology | Purpose |
 |---|---|
-| C Programming | Core development language |
-| GCC Compiler | Program compilation |
+| C Programming | GCC Compiler | Program compilation |
 | Visual Studio Code | Code editor / IDE |
 
 ---
@@ -284,7 +275,6 @@ Example:
 
 - Easy to understand
 - Beginner-friendly
-- Demonstrates real-world use of structures
 - Improves programming logic
 - Efficient data organization
 - Simple console-based UI
@@ -298,8 +288,6 @@ This project can be enhanced further by adding:
 - File handling for permanent data storage
 - Student record insertion and deletion
 - Updating student details
-- Sorting student records
-- GUI version using C++/Java/Python
 - Database connectivity
 - Password-based login system
 
@@ -312,7 +300,6 @@ After completing this project, learners will understand:
 - How structures work in C
 - Managing multiple records using arrays
 - Function-based modular programming
-- Building menu-driven applications
 - Performing result calculations programmatically
 
 ---
