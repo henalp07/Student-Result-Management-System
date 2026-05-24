@@ -99,7 +99,6 @@ This project uses the following C programming concepts:
 - Loops
 - Conditional Statements
 - Pointers
-- Menu-driven Programming
 - Data Processing
 
 ---
