@@ -41,7 +41,7 @@ student information.
 ## File Structure
 
 ### Main Source File
-- main.c
+- Resultmanagement.c
 
 ### Data File
 - students.csv
