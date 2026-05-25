@@ -117,12 +117,12 @@ Controls the menu-driven system and user interaction.
 
 ### Compile
 ```bash
-gcc main.c -o result
+gcc ResultManagement.c -o ResultManagement.c
 ```
 
 ### Run
 ```bash
-./result
+.\ResultManagement 
 ```
 
 ---
