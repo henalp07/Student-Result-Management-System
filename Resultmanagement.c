@@ -1,28 +1,34 @@
-#include <stdio.h>
-#include <string.h>
+#include <stdio.h>      
+#include <string.h>   
 
+// Maximum number of students that can be stored
 #define SIZE 100
 
+// Structure to store student details
 struct Student {
 
-    int roll;
-    char name[100];
+    int roll;               // Roll Number
+    char name[100];         // Student Name
 
-    int python;
-    int javascript;
-    int cprogram;
+    int python;             // Marks in Python
+    int javascript;         // Marks in JavaScript
+    int cprogram;           // Marks in C Programming
 
-    int total;
-    float percentage;
-    char grade;
+    int total;              // Total Marks
+    float percentage;       // Percentage
+    char grade;             // Grade (A, B, C, D, F)
 };
 
+// Function to calculate total, percentage and grade
 void calculateResult(struct Student *s) {
 
+    // Calculate total marks
     s->total = s->python + s->javascript + s->cprogram;
 
+    // Calculate percentage
     s->percentage = s->total / 3.0;
 
+    // Assign grade based on percentage
     if(s->percentage >= 90)
         s->grade = 'A';
 
@@ -39,6 +45,7 @@ void calculateResult(struct Student *s) {
         s->grade = 'F';
 }
 
+// Function to display a student's complete information
 void displayStudent(struct Student s) {
 
     printf("\n====================================================");
@@ -57,12 +64,15 @@ void displayStudent(struct Student s) {
     printf("\n====================================================\n");
 }
 
+// Function to load student data from CSV file
 int loadStudents(struct Student s[]) {
 
     FILE *fp;
 
+    // Open CSV file in read mode
     fp = fopen("students.csv", "r");
 
+    // Check if file opened successfully
     if(fp == NULL) {
 
         printf("\nError Opening File!\n");
@@ -71,32 +81,43 @@ int loadStudents(struct Student s[]) {
 
     int i = 0;
 
-    while(fscanf(fp,"%d,%99[^,],%d,%d,%d",
+    // Read records from CSV file
+    while(fscanf(fp,
+                 "%d,%99[^,],%d,%d,%d",
                  &s[i].roll,
                  s[i].name,
                  &s[i].python,
                  &s[i].javascript,
                  &s[i].cprogram) == 5) {
 
+        // Calculate result after reading marks
         calculateResult(&s[i]);
 
         i++;
     }
 
+    // Close file
     fclose(fp);
 
+    // Return total number of students loaded
     return i;
 }
 
+// Main Function
 int main() {
 
+    // Array to store student records
     struct Student s[SIZE];
 
-    int i, choice, roll, found;
-    int totalStudents;
+    int i;
+    int choice;
+    int roll;
+    int found;
 
-    totalStudents = loadStudents(s);
+    // Load students from CSV file
+    int totalStudents = loadStudents(s);
 
+    // Menu-driven loop
     do {
 
         printf("\n\n========== STUDENT RESULT MANAGEMENT SYSTEM ==========");
@@ -115,6 +136,7 @@ int main() {
 
         switch(choice) {
 
+            // Display all student records
             case 1:
 
                 printf("\n================ ALL STUDENTS ================\n");
@@ -126,6 +148,7 @@ int main() {
 
                 break;
 
+            // Search student using roll number
             case 2:
 
                 printf("\nEnter Roll Number : ");
@@ -153,6 +176,7 @@ int main() {
 
                 break;
 
+            // Display Grade A students
             case 3:
 
                 printf("\n=========== GRADE A STUDENTS ===========\n");
@@ -175,6 +199,7 @@ int main() {
 
                 break;
 
+            // Display Grade B students
             case 4:
 
                 printf("\n=========== GRADE B STUDENTS ===========\n");
@@ -197,6 +222,7 @@ int main() {
 
                 break;
 
+            // Display Grade C students
             case 5:
 
                 printf("\n=========== GRADE C STUDENTS ===========\n");
@@ -219,6 +245,7 @@ int main() {
 
                 break;
 
+            // Display Grade D students
             case 6:
 
                 printf("\n=========== GRADE D STUDENTS ===========\n");
@@ -241,6 +268,7 @@ int main() {
 
                 break;
 
+            // Display Grade F students
             case 7:
 
                 printf("\n=========== GRADE F STUDENTS ===========\n");
@@ -263,11 +291,13 @@ int main() {
 
                 break;
 
+            // Exit program
             case 8:
 
                 printf("\nExiting Program...\n");
                 break;
 
+            // Invalid menu option
             default:
 
                 printf("\nInvalid Choice!\n");
